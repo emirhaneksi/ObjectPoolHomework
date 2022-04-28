@@ -1,0 +1,26 @@
+@startuml
+class objectpoolhomework.DoctorPool {
+- {static} DoctorPool doctorPool
+- ınt numOfDoctor
++ ArrayList<Doctor> free
++ ArrayList<Doctor> used
+- <<Create>> DoctorPool()
++ {static} DoctorPool getDoctor()
++ Doctor fillPool()
++ void unloadPool(Doctor)
+}
+class objectpoolhomework.ObjectPoolHomework {
++ {static} ınt sickCount
++ {static} void main(String[])
+}
+class objectpoolhomework.Doctor {
++ void toCure()
+}
+class objectpoolhomework.Sick {
++ <<Create>> Sick()
++ void run()
+}
+
+
+java.lang.Thread <|-- objectpoolhomework.Sick
+@enduml
